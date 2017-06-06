@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>支付处理中-为自己赚更多的钱</title>
+    <link href="img/icon.png" rel="icon" type="image/x-icon"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
+    <!-- Custom common CSS -->
+    <link href="css/order.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="modal fade " data-backdrop="false" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-bg-box"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h2 class="modal-title text-center modal-login" id="myModalLabel">用户登陆</h2>
+                    <h2 class="modal-title text-center modal-register">立即注册</h2>
+                </div>
+                <form class="form-signin form-change-1" method="post" role="form">
+                    <div class="modal-body">
+                        <div class="input-group form-group">
+                            <span class="input-group-addon"><i class="fa fa-mobile fa-2x fa-fw"></i></span>
+                            <input type="phone" class="form-control input-lg input-change-1" name="username" placeholder="请输入手机账号" required autofocus>
+                        </div>
+                        <div class="input-group form-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-2x fa-fw"></i></span>
+                            <input type="password" class="form-control input-lg" name="passward" placeholder="请输入密码" required>
+                        </div>
+                        <div class="bottom-tool modal-login text-right">
+                            <a class="primary-color" href="resetpsd.html">忘记密码？</a>
+                            <span>没有账号？现在</span><a class="primary-color modal-register-click" href="javascript:;">注册</a>
+                        </div>
+                        <div class="input-group form-group modal-register">
+                            <span class="input-group-addon"><i class="fa fa-key fa-2x fa-fw"></i></span>
+                            <input type="password" class="form-control input-lg" placeholder="请确认密码" required>
+                        </div>
+                        <div class="input-group form-group input-group-lg modal-register">
+                            <input type="text" class="form-control input-lg" placeholder="请输入短信验证码" required>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">获得验证码</button>
+                            </span>
+                        </div>
+                        <div class="bottom-tool modal-register text-right row">
+                            <div class="col-xs-12">
+                                注册即视为同意 <a class="primary-color" data-toggle="modal" data-target="#agreement_modal" href="javascript:;"> 《吾吾金矿会员服务协议》 </a> <a href="javascript:;" class="primary-color" data-toggle="modal" data-target="#agreement_modal">《吾吾金矿网站声明》</a>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>已有账号？现在</span><a class="primary-color modal-login-click" href="javascript:;">登录</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-lg btn-primary btn-block botton-change-1" type="submit">立即登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade " id="agreement_modal" tabindex="-1" role="dialog" aria-labelledby="agreement_moda_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h2 class="modal-title text-center modal-login" id="agreement_moda_label">XXXXXXXX</h2>
+                </div>
+
+                <div class="modal-body">
+                    <iframe  class="agreement_iframe" scrolling="auto" allowtransparency="true" src="agreement.html" frameborder="0"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning header-warning" role="alert">此网站仅用于学习，请<strong><em>不要填写</em></strong> 任何您的个人信息。大部分表单不用填写任何信息，请直接点击提交继续下一步。顺便一提，也欢迎您用手机访问此网站 ;)</div>
+    <header>
+        <!-- Navigation -->
+        <nav role="navigation" class="navbar-first navbar navbar-default header-first">
+            <div class="container">
+                <div id="header_first">
+                    <ul class="nav navbar-nav left" >
+                        <li><a href="javascript:;"> <i class="fa fa-mobile fa-1x" aria-hidden="true"></i> <span>手机版</span> </a>
+                            <div></div>
+                        </li>
+                        <li><a href="javascript:;"> <i class="fa fa-weixin" aria-hidden="true"></i> <span>官方微信</span> </a>
+                            <div></div>
+                        </li>
+                        <li><a href="http://weibo.com/jerry50124"> <i class="fa fa-weibo" aria-hidden="true"></i> <span>官方微博</span> </a>
+                            <div></div>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right right">
+                        <li class="online">您好，欢迎来到吾吾金矿! <a href="javascript:;"  id="log_out">[退出]</a><a href="assets.html#titlemsg">消息<span class="badge">1</span></a></li>
+                        <li class="outline hidden"><a href="javascript:;" class="modal-login-click">登录</a> | <a href="javascript:;" class="modal-register-click">注册</a></li>
+                        <li><a href="aboutus.html">帮助中心</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav role="navigation" class="navbar-second navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbar_second" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><img src="img/logo1.png" alt="logo"></a>
+                </div>
+                <div id="navbar_second" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html"> 首页 </a></li>
+                        <li><a href="financialproduct.html"> 投资理财 </a></li>
+                        <li><a href="assets.html"> 我的资产 </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="load-header"></div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row text-center">
+                <div class="fa-box col-xs-12 ">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div>
+                <div class="text-box col-xs-12">
+                    <span class="text">投资申请已提交</span>
+                </div>
+                <div class="btn-group-box col-xs-12">
+                    <div class="btn-group" role="group" aria-label="link">
+                        <a href="assets.html#titlerecords" class="btn btn-default btn-lg">交易记录</a>
+                        <a href="financialproduct.html" class="btn btn-primary btn-lg">理财项目</a>
+                    </div>
+                </div>
+                <div class="tips col-xs-12">
+                    <p>投资申请成功后，将发短信告知，请注意查收</p>
+                    <p>您也可查看：交易及投资详情</p>
+                    <p>(如有任何疑问，可联系客服 <span class="customer_service_phone"></span> )</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="load-footer"></div>
+    <div class="container-fluid footer">
+        <footer class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                    <div>
+                        <p class="large_font"><a href="aboutus.html">关于我们</a></p>
+                        <a href="aboutus.html">公司简介</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">平台公告</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">联系我们</a>
+                    </div>
+                    <div>
+                        <p class="large_font"><a href="aboutus.html">帮助中心</a></p>
+                        <a href="aboutus.html">新手必读</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">注册及认证</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">绑定银行卡</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">投资操作</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">意见与建议</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5 ">
+                    <p class="large_font">客服热线</p>
+                    <a class="customer_service_phone"></a>
+                    <a class="toCservice" href="tencent://message/?uin=1600136170amp;Site=小廖同学&amp;Menu=yes" target="_blank"><i class="fa fa-headphones" aria-hidden="true"></i>在线客服</a>
+                    <p class="large_font tips">投资有风险，理财需谨慎</p>
+                </div>
+            </div>
+            <div class="text-center col-xs-12">
+                <p>
+                    &copy;2017吾吾金矿 | 蜀ICP备XXXXXXXX号-1 | 吾吾互联网金融服务（成都）有限公司（XXX-XXXXXXXX）
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!--sider-->
+    <div class="main-im" style="top:100px;">
+        <div id="open_im" class="open-im">+</div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭"></a></div>
+            <a href="tencent://message/?uin=1600136170amp;Site=小廖同学&amp;Menu=yes" target="_blank" title="客服QQ：1600136170" class="im-qq qq-a">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c"><img class="img-qq" src="img/qq.png"></div>
+                <span>QQ在线咨询</span>
+            </a>
+
+            <div class="jsqq_link">XXXXXXXXXXX</div>
+            <div class="im-footer" style="position:relative">
+                <div class="weixing-container">
+                    <div class="weixing-show show" >
+                        <div class="weixing-txt">微信</div>
+                        <div class="weixin"></div>
+                        <div class="weixing-sanjiao"></div>
+                        <div class="weixing-sanjiao-big"></div>
+                    </div>
+                </div>
+                <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+<!--jquery-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!--custom JS-->
+<script src="js/common.js"></script>
+</body>
+</html>

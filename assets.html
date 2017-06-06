@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>我的资产-为自己赚更多的钱</title>
+    <link href="img/icon.png" rel="icon" type="image/x-icon"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
+    <!-- Custom common CSS -->
+    <link href="css/assets.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="modal fade " data-backdrop="false" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-bg-box"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h2 class="modal-title text-center modal-login" id="myModalLabel">用户登陆</h2>
+                    <h2 class="modal-title text-center modal-register">立即注册</h2>
+                </div>
+                <form class="form-signin form-change-1" method="post" role="form">
+                    <div class="modal-body">
+                        <div class="input-group form-group">
+                            <span class="input-group-addon"><i class="fa fa-mobile fa-2x fa-fw"></i></span>
+                            <input type="phone" class="form-control input-lg input-change-1" name="username" placeholder="请输入手机账号" required autofocus>
+                        </div>
+                        <div class="input-group form-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-2x fa-fw"></i></span>
+                            <input type="password" class="form-control input-lg" name="passward" placeholder="请输入密码" required>
+                        </div>
+                        <div class="bottom-tool modal-login text-right">
+                            <a class="primary-color" href="resetpsd.html">忘记密码？</a>
+                            <span>没有账号？现在</span><a class="primary-color modal-register-click" href="javascript:;">注册</a>
+                        </div>
+                        <div class="input-group form-group modal-register">
+                            <span class="input-group-addon"><i class="fa fa-key fa-2x fa-fw"></i></span>
+                            <input type="password" class="form-control input-lg" placeholder="请确认密码" required>
+                        </div>
+                        <div class="input-group form-group input-group-lg modal-register">
+                            <input type="text" class="form-control input-lg" placeholder="请输入短信验证码" required>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">获得验证码</button>
+                            </span>
+                        </div>
+                        <div class="bottom-tool modal-register text-right row">
+                            <div class="col-xs-12">
+                                注册即视为同意 <a class="primary-color" data-toggle="modal" data-target="#agreement_modal" href="javascript:;"> 《吾吾金矿会员服务协议》 </a> <a class="primary-color" href="javascript:;" data-toggle="modal" data-target="#agreement_modal">《吾吾金矿网站声明》</a>
+                            </div>
+                            <div class="col-xs-12">
+                                <span>已有账号？现在</span><a class="primary-color modal-login-click" href="javascript:;">登录</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-lg btn-primary btn-block botton-change-1" type="submit">立即登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade " id="agreement_modal" tabindex="-1" role="dialog" aria-labelledby="agreement_moda_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h2 class="modal-title text-center modal-login" id="agreement_moda_label">XXXXXXXX</h2>
+                </div>
+
+                <div class="modal-body">
+                    <iframe  class="agreement_iframe" scrolling="auto" allowtransparency="true" src="agreement.html" frameborder="0"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning header-warning" role="alert">此网站仅用于学习，请<strong><em>不要填写</em></strong> 任何您的个人信息。大部分表单不用填写任何信息，请直接点击提交继续下一步。顺便一提，也欢迎您用手机访问此网站 ;)</div>
+    <header>
+        <!-- Navigation -->
+        <nav role="navigation" class="navbar-first navbar navbar-default header-first">
+            <div class="container">
+                <div id="header_first">
+                    <ul class="nav navbar-nav left" >
+                        <li><a href="javascript:;"> <i class="fa fa-mobile fa-1x" aria-hidden="true"></i> <span>手机版</span> </a>
+                            <div></div>
+                        </li>
+                        <li><a href="javascript:;"> <i class="fa fa-weixin" aria-hidden="true"></i> <span>官方微信</span> </a>
+                            <div></div>
+                        </li>
+                        <li><a href="http://weibo.com/jerry50124"> <i class="fa fa-weibo" aria-hidden="true"></i> <span>官方微博</span> </a>
+                            <div></div>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right right">
+                        <li class="online">您好，欢迎来到吾吾金矿! <a href="javascript:;"  id="log_out">[退出]</a><a href="assets.html#titlemsg">消息<span class="badge">1</span></a></li>
+                        <li class="outline hidden"><a href="javascript:;" class="modal-login-click">登录</a> | <a href="javascript:;" class="modal-register-click">注册</a></li>
+                        <li><a href="aboutus.html">帮助中心</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav role="navigation" class="navbar-second navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbar_second" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><img src="img/logo1.png" alt="logo"></a>
+                </div>
+                <div id="navbar_second" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html"> 首页 </a></li>
+                        <li><a href="financialproduct.html"> 投资理财 </a></li>
+                        <li class="active"><a href="assets.html"> 我的资产 </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="load-header"></div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="head col-xs-12">
+                    <div class="col-xs-6 text-right">
+                        <img src="img/assets/head.png" alt="head_img">
+                    </div>
+                    <div class="col-xs-6 text">
+                        <div class="col-xs-12 welcome">
+                            <span>您好, XXX</span>
+                            <i class="fa fa-eye-slash eye close-eye pull-right text-danger" data-control="open" aria-hidden="true"></i>
+                            <i class="fa fa-eye eye open-eye pull-right text-danger" data-control="close" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-xs-12">
+                            <a href="javascript:;" data-toggle="tooltip"  data-placement="bottom" title="已认证手机">
+                                <img src="img/assets/s1.png" alt="认证手机">
+                            </a>
+                            <a href="javascript:;" data-toggle="tooltip"  data-placement="bottom" title="已实名认证">
+                                <img src="img/assets/s2.png" alt="实名认证">
+                            </a>
+                            <a href="javascript:;" data-toggle="tooltip"  data-placement="bottom" title="已绑定银行卡">
+                                <img src="img/assets/s3.png" alt="绑定银行卡">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="body col-xs-12">
+                    <div class="panel-group" id="accordion">
+                        <!--title-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    资产管理
+                                </h4>
+                            </div>
+                        </div>
+                        <!--账户总览-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#personalassets"><i class="glyphicon glyphicon-user"> </i> 账户总览</a>
+                                </h4>
+                            </div>
+                            <div id="personalassets" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="box col-xs-12">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <div class="col-xs-12 p1">
+                                                总资产（元）
+                                                <i class="fa fa-eye-slash eye close-eye" data-control="open" aria-hidden="true"></i>
+                                                <i class="fa fa-eye eye open-eye" data-control="close" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">100.<small>00</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <div class="col-xs-12 p1">
+                                                累计收益（元）<i class="fa fa-question-circle" data-toggle="tooltip"  data-placement="top" title="已获得的实际收益，不含预期收益" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye ">0.<small>00</small></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--账户余额-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#balance"><i class="glyphicon glyphicon-usd"> </i> 账户余额</a>
+                                </h4>
+                            </div>
+                            <div id="balance" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="box col-xs-12">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <div class="col-xs-12 p1">
+                                                可用余额（元）
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-list col-xs-12 col-sm-4 pull-right">
+                                            <a href="recharge.html" class="btn btn-default"> 充 值 </a> <a href="withdraw.html" class="btn btn-primary"> 提 现 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--灵活理财-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#smart_manage"><i class="glyphicon glyphicon-piggy-bank"> </i> 灵活理财</a>
+                                </h4>
+                            </div>
+                            <div id="smart_manage" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="first-box text-center col-xs-12">
+
+                                        <div class="col-xs-12 col-sm-1 title">
+                                            资产
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 z">
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">100.<small>00</small></span>
+                                            </div>
+                                            <div class="col-xs-12 p1">
+                                                总金额(元)
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-1 operator">
+                                            =
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 x">
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                            <div class="col-xs-12 p1">
+                                                投资金额(元) <i class="fa fa-question-circle" data-toggle="tooltip"  data-placement="bottom" title="已确认投资成功的金额" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-1 operator">
+                                            +
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 y">
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">100.<small>00</small></span>
+                                            </div>
+                                            <div class="col-xs-12 p1">
+                                                在途金额(元) <i class="fa fa-question-circle" data-toggle="tooltip"  data-placement="bottom" title="(1)支付成功，未确认份额的投资金额(2)赎回申请后，暂未确认份额的赎回金额(3)赎回份额确认后，待赎回至账户余额或银行卡的赎回金额" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="second-box text-center col-xs-12">
+
+                                        <div class="col-xs-12 col-sm-1 title">
+                                            收益
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 z">
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">100.<small>00</small></span>
+                                            </div>
+                                            <div class="col-xs-12 p1">
+                                                累计收益(元) <i class="fa fa-question-circle" data-toggle="tooltip"  data-placement="bottom" title="用户在吾吾金矿历史投资本项目所获收益的累计值，包含昨日收益" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-1 operator">
+                                            |
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 x">
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                            <div class="col-xs-12 p1">
+                                                昨日收益(元) <i class="fa fa-question-circle" data-toggle="tooltip"  data-placement="bottom" title="收益=(已确认金额/10000)*该日万份收益" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third-box col-xs-12">
+                                        <div class="col-xs-12 col-sm-4">近七日年化收益率(%):<span class="primary-color">4.73</span></div><div class="col-xs-12 col-sm-4"> 万份收益（元）：<span class="primary-color">1.2562</span></div>
+                                        <div class="col-xs-12 col-sm-4 pull-right">
+                                            <a href="redeem.html" class="btn btn-default"> 赎 回 </a> <a href="financialproduct.html" class="btn btn-primary"> 投 资 </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--定期理财-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#time_deposit"><i class="glyphicon glyphicon-jpy"> </i> 定期投资</a>
+                                </h4>
+                            </div>
+                            <div id="time_deposit" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="first-box text-center col-xs-12">
+
+                                        <div class="col-xs-12 col-sm-1 title">
+                                            资产
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 z">
+                                            <div class="col-xs-12 p1">
+                                                总金额(元)
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-1 operator">
+                                            |
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 x">
+                                            <div class="col-xs-12 p1">
+                                                累计收益(元)
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 y">
+                                            <div class="col-xs-12 p1">
+                                                预期收益(元)
+                                            </div>
+                                            <div class="col-xs-12 p2">
+                                                <span class="close-eye">---</span>
+                                                <span class="open-eye">0.<small>00</small></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="togglable-tabs col-xs-12">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#hold" aria-controls="hold" role="tab" data-toggle="tab">持有中 <span class="badge">0</span></a></li>
+                                            <li role="presentation"><a href="#back" aria-controls="back" role="tab" data-toggle="tab">已回款 <span class="badge">0</span></a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="hold">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>名称</th>
+                                                        <th>年化收益</th>
+                                                        <th>投资起始-到期日</th>
+                                                        <th>投资本金（元）</th>
+                                                        <th>预期收益（元）</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="back">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>名称</th>
+                                                        <th>年化收益</th>
+                                                        <th>投资起始-到期日</th>
+                                                        <th>投资本金（元）</th>
+                                                        <th>累计收益（元）</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--交易记录-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a name="titlerecords"></a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#records"><i class="glyphicon glyphicon-menu-hamburger"> </i> 交易记录</a>
+                                </h4>
+                            </div>
+                            <div id="records" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="togglable-tabs col-xs-12">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#aweek" aria-controls="aweek" role="tab" data-toggle="tab">近一周 <span class="badge">0</span></a></li>
+                                            <li role="presentation"><a href="#amonth" aria-controls="amonth" role="tab" data-toggle="tab">近一月 <span class="badge">0</span></a></li>
+                                            <li role="presentation"><a href="#threemonth" aria-controls="threemonth" role="tab" data-toggle="tab">近三月 <span class="badge">0</span></a></li>
+                                            <li role="presentation"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">全部 <span class="badge">0</span></a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="aweek">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>交易时间</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部类型</option>
+                                                                <option value="1">投资</option>
+                                                                <option value="2">赎回</option>
+                                                                <option value="3">兑付</option>
+                                                                <option value="4">基金投资</option>
+                                                                <option value="5">基金赎回</option>
+                                                                <option value="6">已转让</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>金额/份额</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部状态</option>
+                                                                <option value="1">成功</option>
+                                                                <option value="2">失败</option>
+                                                                <option value="3">已退款</option>
+                                                                <option value="4">处理中</option>
+                                                                <option value="5">交易过期</option>
+                                                                <option value="6">已撤单</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>业务单号</th>
+                                                        <th>备注</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <!--<div class="items row">-->
+                                                    <!--<ul class="i col-xs-12">-->
+                                                        <!--<li class="name col-xs-12">投资 -吾存金-灵活理财A02P21号</li>-->
+                                                        <!--<li class="money col-xs-12">100.00元</li>-->
+                                                        <!--<li class="status col-xs-12">支付成功 <span class="payment">（卡支付）</span></li>-->
+                                                        <!--<li class="no col-xs-12">业务单号：17053121592263601312</li>-->
+                                                        <!--<li class="time col-xs-12">2017-05-31 21:59:23</li>-->
+                                                    <!--</ul>-->
+                                                <!--</div>-->
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="amonth">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>交易时间</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部类型</option>
+                                                                <option value="1">投资</option>
+                                                                <option value="2">赎回</option>
+                                                                <option value="3">兑付</option>
+                                                                <option value="4">基金投资</option>
+                                                                <option value="5">基金赎回</option>
+                                                                <option value="6">已转让</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>金额/份额</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部状态</option>
+                                                                <option value="1">成功</option>
+                                                                <option value="2">失败</option>
+                                                                <option value="3">已退款</option>
+                                                                <option value="4">处理中</option>
+                                                                <option value="5">交易过期</option>
+                                                                <option value="6">已撤单</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>业务单号</th>
+                                                        <th>备注</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="threemonth">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>交易时间</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部类型</option>
+                                                                <option value="1">投资</option>
+                                                                <option value="2">赎回</option>
+                                                                <option value="3">兑付</option>
+                                                                <option value="4">基金投资</option>
+                                                                <option value="5">基金赎回</option>
+                                                                <option value="6">已转让</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>金额/份额</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部状态</option>
+                                                                <option value="1">成功</option>
+                                                                <option value="2">失败</option>
+                                                                <option value="3">已退款</option>
+                                                                <option value="4">处理中</option>
+                                                                <option value="5">交易过期</option>
+                                                                <option value="6">已撤单</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>业务单号</th>
+                                                        <th>备注</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="all">
+                                                <table class="table table-striped table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>交易时间</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部类型</option>
+                                                                <option value="1">投资</option>
+                                                                <option value="2">赎回</option>
+                                                                <option value="3">兑付</option>
+                                                                <option value="4">基金投资</option>
+                                                                <option value="5">基金赎回</option>
+                                                                <option value="6">已转让</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>金额/份额</th>
+                                                        <th>
+                                                            <select>
+                                                                <option value="0" selected>全部状态</option>
+                                                                <option value="1">成功</option>
+                                                                <option value="2">失败</option>
+                                                                <option value="3">已退款</option>
+                                                                <option value="4">处理中</option>
+                                                                <option value="5">交易过期</option>
+                                                                <option value="6">已撤单</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>业务单号</th>
+                                                        <th>备注</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <div class="none text-center">
+                                                    <img src="img/assets/no1.png" alt="none of records">
+                                                    <span>暂无记录</span>
+                                                    <a href="financialproduct.html" class="btn btn-primary">去购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--优惠卷-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#coupon"><i class="fa fa-ticket"> </i> 优 惠 卷</a>
+                                </h4>
+                            </div>
+                            <div id="coupon" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="togglable-tabs col-xs-12">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#use" aria-controls="use" role="tab" data-toggle="tab">未使用 <span class="badge">0</span></a></li>
+                                            <li role="presentation"><a href="#used" aria-controls="used" role="tab" data-toggle="tab">已使用 <span class="badge">1</span></a></li>
+                                            <li role="presentation"><a href="#past" aria-controls="past " role="tab" data-toggle="tab">已过期 <span class="badge">1</span></a></li>
+                                            <li role="presentation"><a href="#instruction" aria-controls="instruction" role="tab" data-toggle="tab">使用说明 </a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="use">
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="used">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>卷面值</th>
+                                                            <th>使用项目</th>
+                                                            <th>使用时间</th>
+                                                            <th>来源和发放时间</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="item">
+                                                            <td class="value">
+                                                                <img src="img/assets/t1.png" alt="已使用">
+                                                                <div class="top"><i class="fa fa-jpy" aria-hidden="true"></i> 50</div>
+                                                                <div class="bottom">现金卷</div>
+                                                                <img src="img/assets/ud1.png" alt="已使用">
+                                                            </td>
+                                                            <td class="object">
+                                                                <div>吾存金-灵活理财</div>
+                                                            </td>
+                                                            <td class="time">
+                                                                <div>2017-05-31</div>
+                                                            </td>
+                                                            <td class="source">
+                                                                <div>吾存金系列专用 </div>
+                                                                <span>2017-05-31</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="items row">
+                                                    <div class="value col-sm-3 col-xs-12">
+                                                        <div class="box  text-right">
+                                                            <div class="top"><i class="fa fa-jpy" aria-hidden="true"></i> 50</div>
+                                                            <div class="bottom">现金卷</div>
+                                                            <i class="glyphicon glyphicon-triangle-right detail"  data-toggle="tooltip"  data-placement="bottom" title="可用项目:吾存金。过期:2017-05-31。来源:吾存金系列专用。"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="past">
+                                                <div class="items row">
+                                                    <div class="value col-sm-3 col-xs-12">
+                                                        <div class="box  text-right">
+                                                            <div class="top"><i class="fa fa-jpy" aria-hidden="true"></i> 300</div>
+                                                            <div class="bottom">现金卷</div>
+                                                            <i class="glyphicon glyphicon-triangle-right detail"  data-toggle="tooltip"  data-placement="bottom" title="过期:2017-05-31, 来源:月末回馈单笔满10000元可用；适用薪金系列项目和部分活动项目（转让项目除外）单笔满10000元可用；适用薪金系列项目和部分活动项目（转让项目除外）"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="instruction">
+                                                <ol>
+                                                    <li>单张优惠券只能使用一次，不可拆分；</li>
+                                                    <li>多张优惠券不可叠加使用；</li>
+                                                    <li>优惠券不可转让交易；</li>
+                                                    <li>优惠券只在有效期内可用，逾期作废；</li>
+                                                    <li>优惠券适用项目类型以实际使用为准；</li>
+                                                    <li>优惠券系对投资者投资行为的鼓励，不表示对项目本身收益的任何承诺或保证；</li>
+                                                    <li>请用户仔细阅读本规则并依照本规则参与活动，如有违反或超出本规则的情形，或者因用户本人操作不当无法参与活动，将不能依照本规则享受相关权益。</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--title-->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    账号管理
+                                </h4>
+                            </div>
+                        </div>
+                        <!--基本信息-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#basical_info"><i class="glyphicon glyphicon-file"> </i> 基本信息</a>
+                                </h4>
+                            </div>
+                            <div id="basical_info" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="r r1 col-xs-12">
+                                        <div class="title col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-2">手机认证</div>
+                                        <div class="p2 col-sm-push-1 hidden-xs col-sm-5">保障资金安全,获取资金变动通知</div>
+                                        <div class="p3 col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-4 text-center">136XXXXXXXX</div>
+                                    </div>
+                                    <div class="r r2 col-xs-12">
+                                        <div class="title col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-2">实名认证</div>
+                                        <div class="p2 col-sm-push-1 hidden-xs col-sm-5">保障账户安全,确认投资身份</div>
+                                        <div class="p3 col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-4 text-center">XX (尾号XXXX)</div>
+                                    </div>
+                                    <div class="r r3 col-xs-12">
+                                        <div class="title col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-2">银行卡</div>
+                                        <div class="p2 col-sm-push-1 hidden-xs col-sm-5">账户所有资金只限该卡提现</div>
+                                        <div class="p3 col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-4 text-center">邮政储蓄银行 (尾号XXXX)</div>
+                                    </div>
+                                    <div class="r r4 col-xs-12">
+                                        <div class="title col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-2">登录密码</div>
+                                        <div class="p2 col-sm-push-1 hidden-xs col-sm-5">登录账户需要输入密码</div>
+                                        <div class="p3 col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-4 text-center"><a class="primary-color" href="modifypsd.html">修改</a></div>
+                                    </div>
+                                    <div class="r r5 col-xs-12">
+                                        <div class="title col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-2">交易密码</div>
+                                        <div class="p2 col-sm-push-1 hidden-xs col-sm-5">保障资金安全</div>
+                                        <div class="p3 col-xs-5 col-xs-push-2 col-sm-push-1 col-sm-4 text-center"><a class="primary-color" href="resetpaypsd.html">重置</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--消息-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a name="titlemsg" ></a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#msg"><i class="fa fa-commenting-o" aria-hidden="true"> </i> 消息中心<span class="badge">1</span></a>
+                                </h4>
+                            </div>
+                            <div id="msg" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="alert alert-info" role="alert">
+                                        <strong>交易通知</strong> 尊敬的用户，您于2017-05-31申请投资的项目吾存金-灵活理财总金额为100.00元已确认，更多详情请登录网站查看‘我的资产’。
+                                    </div>
+                                    <nav aria-label="..." class="text-center">
+                                        <ul class="pagination pagination-sm">
+                                            <li class="disabled"><a href="javascript:;" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                            <li class="active"><a href="javascript:;">1<span class="sr-only">(current)</span></a></li>
+                                            <li class="disabled"><a href="javascript:;" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="load-footer"></div>
+    <div class="container-fluid footer">
+        <footer class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                    <div>
+                        <p class="large_font"><a href="aboutus.html">关于我们</a></p>
+                        <a href="aboutus.html">公司简介</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">平台公告</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">联系我们</a>
+                    </div>
+                    <div>
+                        <p class="large_font"><a href="aboutus.html">帮助中心</a></p>
+                        <a href="aboutus.html">新手必读</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">注册及认证</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">绑定银行卡</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">投资操作</a><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                        <a href="aboutus.html">意见与建议</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5 ">
+                    <p class="large_font">客服热线</p>
+                    <a class="customer_service_phone"></a>
+                    <a class="toCservice" href="tencent://message/?uin=1600136170amp;Site=小廖同学&amp;Menu=yes" target="_blank"><i class="fa fa-headphones" aria-hidden="true"></i>在线客服</a>
+                    <p class="large_font tips">投资有风险，理财需谨慎</p>
+                </div>
+            </div>
+            <div class="text-center col-xs-12">
+                <p>
+                    &copy;2017吾吾金矿 | 蜀ICP备XXXXXXXX号-1 | 吾吾互联网金融服务（成都）有限公司（XXX-XXXXXXXX）
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!--sider-->
+    <div class="main-im" style="top:100px;">
+        <div id="open_im" class="open-im">+</div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭"></a></div>
+            <a href="tencent://message/?uin=1600136170amp;Site=小廖同学&amp;Menu=yes" target="_blank" title="客服QQ：1600136170" class="im-qq qq-a">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c"><img class="img-qq" src="img/qq.png"></div>
+                <span>QQ在线咨询</span>
+            </a>
+
+            <div class="jsqq_link">XXXXXXXXXXX</div>
+            <div class="im-footer" style="position:relative">
+                <div class="weixing-container">
+                    <div class="weixing-show show" >
+                        <div class="weixing-txt">微信</div>
+                        <div class="weixin"></div>
+                        <div class="weixing-sanjiao"></div>
+                        <div class="weixing-sanjiao-big"></div>
+                    </div>
+                </div>
+                <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+<!--jquery-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!--bootstrap-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!--custom JS-->
+<script src="js/common.js"></script>
+<script src="js/assets.js"></script>
+</body>
+</html>

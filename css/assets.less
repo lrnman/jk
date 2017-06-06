@@ -1,0 +1,417 @@
+@import 'style.less';
+
+.content {
+  .eye,
+  .open-eye,
+  .close-eye {
+    display: none;
+  }
+
+  margin-top: 50px;
+
+  .head,
+  .body {
+    padding: 0;
+  }
+
+  .head {
+    padding: 15px 0;
+
+    background-color: #ebebeb;
+    line-height: 90px;
+    height: 120px;
+    margin-bottom: 10px;
+
+    img {
+      width: 82px;
+    }
+
+    .text {
+      height: 45px;
+      line-height: 45px;
+
+      .welcome {
+        span {
+          display: inline-block;
+          border-bottom: 1px dotted #4b4b4b;
+          font-size: 20px;
+        }
+
+        .eye {
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        display: inline-block;
+
+        img {
+          width: 28px;
+        }
+      }
+    }
+  }
+
+  .body {
+    .panel-group {
+      .panel {
+        .panel-heading,
+        .panel-title {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+
+        .panel-title{
+          a {
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            line-height: 45px;
+            color: #6d6d6a;
+          }
+
+          a:hover,
+          a:focus {
+            color: @primary-color;
+          }
+        }
+
+        #balance,
+        #personalassets {
+          .p1 {
+            font-size: 14px;
+            color: #999;
+            line-height: 40px;
+
+            i {
+              font-size: 20px;
+              padding-left: 10px;
+            }
+
+            .eye {
+              cursor: pointer;
+            }
+          }
+
+          .p2 {
+            font-size: 40px;
+            line-height: 40px;
+
+            small {
+              font-size: 20px;
+              line-height: 20px;
+            }
+          }
+        }
+
+        #balance {
+          .btn-list {
+            line-height: 80px;
+
+          }
+        }
+
+        #time_deposit,
+        #smart_manage {
+          .first-box,
+          .second-box {
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+
+            >div {
+              line-height: 88px;
+            }
+
+            .title {
+              font-size: 18px;
+              background-color: #fbfbfb;
+            }
+
+            .z,
+            .x,
+            .y {
+              padding-top: 18px;
+              padding-bottom: 18px;
+
+              >div {
+                line-height: 26px;
+                height: 26px;
+              }
+
+              .p2 {
+                font-size: 24px;
+                small {
+                  font-size: 12px;
+                }
+              }
+
+              .p1 {
+                font-size: 12px;
+              }
+            }  //x,y,z end
+
+            .operator {
+              font-size: 30px;
+              color: #6b6d6a;
+            }
+          }
+          .third-box {
+            line-height: 80px;
+            span {
+              font-size: 18px;
+            }
+          }
+        }
+
+        #time_deposit {
+          .first-box {
+            margin-bottom: 10px;
+          }
+
+          .togglable-tabs {
+            li {
+              width: 50%;
+              text-align: center;
+            }
+          }
+        }
+
+        #records {
+          select {
+            height: 19px;
+            padding: 0;
+            border: 0;
+            font-weight: bold;
+            background-color: #edf4fd;
+            outline: none;
+          }
+        }
+
+        #time_deposit,
+        #records {
+          .items {
+            border: 1px solid #ddd;
+          }
+        }
+
+        #coupon {
+          .tab-pane {
+            min-height: 0;
+          }
+
+          #used {
+            .item {
+              height: 110px;
+
+              td {
+                height: 110px;
+                line-height: 110px;
+                position: relative;
+                overflow: hidden;
+              }
+
+              .value {
+
+                div {
+                  position: absolute;
+                }
+
+                .top {
+                  top: -8px;
+                  left: 60px;
+
+                  color: #dadada;
+                  font-size: 40px;
+                  font-weight: bold;
+
+                  i {
+                    font-size: 20px;
+                  }
+                }
+
+                .bottom {
+                  top: 37px;
+                  left: 62px;
+
+                  color: #fff;
+                  font-weight: bolder;
+                }
+              }
+
+              .source {
+                span {
+                  position: absolute;
+                  top: 26px;
+                  left: 22px;
+                }
+              }
+            }
+          }//used end
+
+          #use,
+          #used,
+          #past {
+            .items {
+              padding: 10px 0px;
+              .value {
+                .box {
+                  position: relative;
+                  width: 155px;
+                  height: 109px;
+                  background-image: url("../img/assets/t1.png");
+
+                  .top {
+                    position: absolute;
+                    left: 30px;
+                    color: #dadada;
+                    font-size: 40px;
+                    font-weight: bold;
+
+                    i {
+                      font-size: 20px;
+                    }
+                  }
+
+                  .bottom {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 54px;
+                    color: #fff;
+                    font-weight: bolder;
+                  }
+                }
+              }
+            }
+          }
+
+          #instruction {
+            padding: 20px 5px;
+
+            li {
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .tab-pane {
+          min-height: 400px;
+          thead {
+            background-color: #edf4fd;
+          }
+        }
+
+        .none {
+          position: relative;
+          width: 114px;
+          left: 50%;
+          margin-left: -57px;
+          margin-top: 50px;
+
+          span {
+            display: block;
+            margin: 10px 0;
+          }
+        }
+
+        #basical_info {
+          .r {
+            height: 90px;
+            line-height: 90px;
+            border-bottom: 1px solid #f1f1f1;
+            background-repeat: no-repeat;
+            background-position: center left;
+
+            .title {
+              padding-left: 20px;
+              font-size: 18px;
+            }
+
+            .p2 {
+              color: #999999;
+            }
+
+            .p3 {
+              padding-top: 36px;
+              line-height: normal;
+            }
+          }
+
+          .r1 {
+            background-image: url("../img/assets/bc1.png");
+          }
+
+          .r2 {
+            background-image: url("../img/assets/bc2.png");
+          }
+
+          .r3 {
+            background-image: url("../img/assets/bc3.png");
+          }
+
+          .r4 {
+            background-image: url("../img/assets/bc4.png");
+          }
+
+          .r5 {
+            background-image: url("../img/assets/bc5.png");
+          } //r end
+        }
+      }//panel end
+    }
+  }
+
+
+
+  @media screen and (max-width: 500px) {
+    .head {
+      .text {
+        padding: 0;
+
+        >div {
+          padding: 0;
+        }
+      }
+    }
+
+    .panel-body {
+      div {
+        padding: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    #smart_manage,
+    #time_deposit {
+      .title {
+        padding: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .items {
+      display: none;
+    }
+
+    #past {
+      .items {
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .panel-body {
+      .tab-pane {
+        table {
+          display: none;
+        }
+        .items {
+          display: block;
+        }
+        table {
+          min-width: 980px;
+        }
+      }
+    }
+  }
+}

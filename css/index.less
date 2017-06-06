@@ -1,0 +1,389 @@
+@import 'style.less';
+
+@media screen and (max-width: 970px){
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+/*product-blocks*/
+.product-blocks {
+  &>div {
+    margin-top: 21px;
+    background-color: #f5f6f7;
+  }
+
+  .block1 .tag {
+    border-top: 2px solid #89e3ce;
+    background-image: url("../img/index/green_bg.png");
+  }
+
+  .block2 .tag {
+    border-top: 2px solid #60bffe;
+    background-image: url("../img/index/blue_bg.png");
+  }
+
+  .block3 .tag {
+    border-top: 2px solid #f67f7f;
+    background-image: url("../img/index/red_bg.png");
+  }
+
+  .tag,
+  .title,
+  .rate,
+  .rate-subtitle,
+  .info,
+  .button {
+    background-color: #fff;
+  }
+
+  .tag {
+    height: 28px;
+    line-height: 28px;
+    color: #FFF;
+    padding: 0;
+    padding-left: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  .rate {
+    height: 42px;
+    line-height: 42px;
+    font-size: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+
+  .rate-subtitle {
+    color: #b3b4b6;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+  }
+
+  .info {
+
+    .p1 {
+      height: 22px;
+      line-height: 22px;
+      font-size: 24px;
+      color: #474e65;
+    }
+
+    .p2 {
+      height: 18px;
+      line-height: 18px;
+      font-size: 16px;
+      color: #b3b4b6;
+      margin-bottom: 0;
+    }
+  }
+
+  .info1 {
+    border-right: 1px solid #e9ecf0;
+  }
+
+  .button {
+    padding: 40px 15px 8px;
+    a {
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      width : 100%;
+    }
+  }
+
+
+
+  @media screen  and (max-width: 310px) {
+    .info .p1 {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+  }
+}
+
+.product-list {
+  color: #474e65;
+
+  .row {
+    margin: 0;
+    background-color: #fff;
+  }
+
+  .title-bar {
+    span {
+      margin: 0 10px;
+      color: #5f6579;
+    }
+
+    margin-top: 25px;
+    height: 77px;
+    line-height: 77px;
+    font-size: 20px;
+    border-bottom: 2px solid #eaecf0;
+
+    .pull-right {
+      color: #abb1c3;
+    }
+
+    .pull-right:hover {
+      text-decoration: none;
+      color: @primary-color;
+    }
+  }
+
+  .item>span {
+    padding-top: 0;
+  }
+
+  .item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px dotted #d4dacb;
+
+    .title {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .rate {
+      .p1 {
+        height: 26px;
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    }
+
+    .p2 {
+      margin-top: 9px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 16px;
+      color: #b3b4b6;
+    }
+
+    .info .p1 {
+      height: 26px;
+      line-height: 26px;
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    .progress-box {
+      padding-left: 0;
+      padding-right: 0;
+
+      .p1 {
+        margin-bottom: 0;
+      }
+
+      .p3 {
+        margin: 0px;
+        padding: 0;
+        height: 5px;
+      }
+    }
+
+    .button {
+      a {
+        height: 46px;
+        width: 137px;
+        line-height: 32px;
+      }
+    }
+
+    @media screen and (max-width: @screen-lg) {
+
+      border-bottom: 4px dotted #d4dacb;
+
+
+      .p2 {
+        font-size: 14px;
+      }
+
+      &>span {
+        text-align: center;
+      }
+
+      .button a {
+        width: 100%;
+      }
+
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .info .date {
+        border-right: 1px solid #e9ecf0;
+      }
+
+      .info .p2 {
+        margin-bottom: 0;
+      }
+
+      .info span,
+      .info p {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .rate .p1 {
+        padding-top: 10px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 40px;
+        font-weight: normal;
+      }
+
+      .info .p1 {
+        height: 22px;
+        line-height: 22px;
+        font-size: 24px;
+      }
+
+      .info,
+      .progress-box,
+      .button {
+        margin-top: 10px;
+      }
+
+      .progress-box .p1 {
+        position: relative;
+        top: 12px;
+        z-index: 99;
+      }
+
+      .button a {
+        font-size: 18px;
+      }
+    }//media max lg end
+  }
+
+  .item:last-child {
+    border-bottom: 0;
+  }
+  //item end
+
+  @media screen and (max-width: 400px) {
+    .title-bar {
+      span, a {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+
+    .item .info .p1 {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+  }
+}//PROJECT LIST end
+
+/*FAQ*/
+.fqa {
+  margin-top: 30px;
+
+  .box {
+    background-color: #fff;
+    padding: 15px;
+    padding-top: 20px;
+  }
+
+  .colorful {
+    color: #7edec8;
+  }
+
+  .title-bar {
+    font-size: 20px;
+    height: 50px;
+    border-bottom: 1px solid #e9ecf0;
+    color: #5f6579;
+
+    a {
+      color: #abb0c2;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: @primary-color;
+    }
+  }
+
+  .content {
+    padding: 0 15px;
+
+    div {
+      border-bottom: 1px dashed #dde1e7;
+      padding: 0;
+
+      a {
+        font-size: 18px;
+        line-height: 70px;
+        color: #000;
+        &:hover {
+          color: @primary-color;
+        }
+      }
+
+      span {
+        color: #8a8c92;
+        font-size: 18px;
+        line-height: 70px;
+      }
+    }
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 400px) {
+    .content div {
+      span,
+      a {
+        line-height: 38px;
+        font-size: 14px;
+      }
+    }
+
+    .title-bar {
+      span, a {
+        margin: 0;
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+/*partner*/
+.partner {
+  font-size: 16px;
+  color: #b3b3b3;
+  line-height: 68px;
+  background-color: #fff;
+
+  .title {
+    color: #333;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: @screen-md) {
+    padding-top: 8px;
+    line-height: 27px;
+
+    .span {
+      margin-bottom: 5px;
+    }
+
+    .row>div {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import 'style.less';
+
+.content {
+  &>.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+    background-color: #fff;
+  }
+
+  .process-icon-box {
+    margin-top: 30px;
+
+    .process-icon {
+      height: 70px;
+
+      .line {
+        height: 70px;
+
+        i {
+          position: relative;
+          top: 36%;
+        }
+      }
+
+      .gray {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: url(desaturate.svg#grayscale);
+        filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        -webkit-filter: grayscale(1);
+      }
+
+    }
+  }
+
+  .process-text {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #b94747;
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .input-group {
+    padding: 0 15px;
+  }
+
+  .bind-bankcard {
+    .form-header {
+      margin-bottom: 30px;
+    }
+
+    .test-code-group {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+
+
+  @media screen and (max-width: @screen-md-min) {
+    .process-icon {
+      div {
+        padding: 0;
+      }
+    }
+  }
+
+}

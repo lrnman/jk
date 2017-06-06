@@ -1,0 +1,259 @@
+@import 'style.less';
+
+.content {
+  .breadcrumb {
+    padding: 0;
+    margin: 0;
+    a {
+      line-height: 50px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .active {
+      cursor: default;
+      a {
+        color: #926f6f;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .overview {
+    .col-xs-12 {
+      background-color: #FFF;
+    }
+
+    .name {
+      height: 58px;
+      padding: 15px;
+      border-bottom: 1px solid #e8e8e8;
+
+      span {
+        margin: 5px;
+        padding-left: 10px;
+        border-left: 4px solid #FD7B3F;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    .info {
+      text-align: center;
+
+      &>span {
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .p1 {
+        margin-top: 20px;
+        font-size: 25px;
+        line-height: 36px;
+      }
+
+      .p2 {
+        font-size: 14px;
+        line-height: 20px;
+        color: #5a5a5a;
+      }
+    }
+
+    .img {
+      padding: 20px 25px;
+    }
+
+    .manager {
+      line-height: 39px;
+      font-weight: 600;
+    }
+
+    @media screen and (max-width: 500px) {
+      .info {
+        padding: 0;
+        p {
+          padding: 0;
+        }
+
+        .p1 {
+          bfont-weight: boder;
+        }
+      }
+
+      .img {
+        padding: 10px 12px;
+
+        div {
+          padding: 0;
+        }
+      }
+
+      .manager {
+        line-height: 18px;
+        font-size: 10px;
+        padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 350px) {
+      .info {
+        .p1 {
+          font-size: 14px;
+          font-weight: bolder;
+          margin: 0;
+        }
+
+        .primary-color {
+          font-size: 28px;
+        }
+
+        .p2 {
+          font-size: 9px;
+        }
+      }
+    }
+  }
+
+  .invest {
+    .col-xs-12 {
+      background-color: #FFF;
+    }
+
+    .name {
+      height: 58px;
+      padding: 15px;
+      border-bottom: 1px solid #e8e8e8;
+
+      span {
+        margin: 5px;
+        padding-left: 10px;
+        border-left: 4px solid #FD7B3F;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    .input {
+      position: relative;
+      padding-top: 50px;
+
+      i {
+        position: absolute;
+        bottom: 4px;
+        margin-left: 10px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #ccc;
+        padding-left: 34px;
+      }
+    }
+
+    .tips1 {
+      color: #EA5200;
+      line-height: 30px;
+      padding-bottom: 20px;
+    }
+
+    .submit {
+      .btn {
+        width: 100%;
+      }
+    }
+
+    .tips2 {
+      padding-top: 20px;
+      padding-bottom: 37px;
+      text-align: center;
+      font-size: 12px;
+      max-height: 108px;
+
+      em {
+        font-weight: bolder;
+      }
+
+      @media screen and (max-width: 500px) {
+        max-height: inherit;
+      }
+    }
+  }
+
+  .overview,
+  .invest {
+    margin-bottom: 16px;
+  }
+
+  .title-bar {
+    border-bottom: 0;
+    background-color: #f5f6f7;
+    color: #555;
+    padding: 0 15px;
+
+    li {
+      padding: 0;
+    }
+
+    a {
+      width: 100%;
+      padding: 5px 0;
+      line-height: 30px;
+      border-radius: 4px 4px 0 0;
+      cursor: pointer;
+      border: 0 !important;
+
+      &:hover {
+        color: @primary-color;
+        background-color: #eee;
+        border: 0 !important;
+      }
+    }
+
+    .active {
+      background-color: #fff;
+      cursor: default;
+      color: #555;
+
+      &:hover {
+        background-color: #fff;
+        color: #555;
+      }
+    }
+
+  }
+
+  .tab-content {
+    padding: 10px 15px;
+
+    .tab-pane>div {
+      background-color: #fff;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .list-index {
+      color: @primary-color;
+    }
+
+    table, th {
+      text-align: center;
+    }
+
+    @media screen and (max-width: 1210px) {
+      .chart {
+        .highcharts-container {
+          overflow-x: scroll;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 25px;
+}

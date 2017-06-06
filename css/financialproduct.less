@@ -1,0 +1,284 @@
+@import 'style.less';
+
+.content {
+  .header-nav {
+    background-color: #fff;
+    border-top: 2px solid #f4f5f7;
+
+    .row {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      font-size: 18px;
+      line-height: 70px;
+      text-align: center;
+    }
+
+    .current {
+      color: #ff8f00;
+      line-height: 68px;
+      border-bottom: 2px solid #ff8f00;
+    }
+  }
+
+  @media screen and (max-width: @screen-xs-min) {
+    .header-nav a {
+      font-size: 14px;
+    }
+  }
+
+  .row {
+    margin: 0;
+    background-color: #fff;
+  }
+
+  .title-bar {
+    background-image: url("../img/financialproduct/f_bg1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 68px;
+
+    span {
+      margin: 0 10px;
+      color: #5f6579;
+    }
+
+    margin-top: 25px;
+    height: 66px;
+    line-height: 68px;
+    font-size: 20px;
+    border-bottom: 2px solid #eaecf0;
+  }
+
+  .product-list-2th .title-bar .glyphicon {
+    color: #fdcd43;
+  }
+
+  .product-list-3th {
+    .title-bar .glyphicon {
+      color: #7bca65;
+    }
+  }
+
+  .title-name-bar {
+    line-height: 65px;
+    font-size: 16px;
+    color: #b3b4b6;
+
+    p,
+    span {
+      margin: 0;
+    }
+
+    .progress-box {
+      padding: 0;
+    }
+
+    border-bottom: 1px solid #ededed;
+
+    .order {
+      cursor: pointer;
+    }
+  }
+
+  .item {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px dotted #d4dacb;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    &>span {
+      padding-top: 0;
+    }
+
+    .title {
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    .rate {
+      .p1 {
+        height: 26px;
+        line-height: 26px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    }
+
+    .p2 {
+      margin-top: 9px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 15px;
+      color: #b3b4b6;
+    }
+
+    .info .p1 {
+      height: 26px;
+      line-height: 26px;
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    .info .money .p1 {
+      padding: 0;
+    }
+
+    .progress-box {
+      padding-left: 0;
+      padding-right: 0;
+
+      .p1 {
+        margin-bottom: 0;
+      }
+
+      .p3 {
+        margin: 0px;
+        padding: 0;
+        height: 5px;
+      }
+    }
+
+    .button {
+      a {
+        height: 46px;
+        width: 137px;
+        line-height: 32px;
+        font-size: 18px;
+      }
+
+      .deadline {
+        width: 126px;
+        height: 20px;
+        margin-bottom: 2px;
+        margin-top: -22px;
+
+        span {
+          background-color: #4b4b4b;
+          border-radius: 5px;
+          color: snow;
+        }
+      }
+    }
+
+    @media screen and (max-width: @screen-lg) {
+
+      border-bottom: 4px dotted #d4dacb;
+
+
+      .p2 {
+        font-size: 14px;
+      }
+
+      &>span {
+        text-align: center;
+      }
+
+      .button a {
+        width: 100%;
+      }
+
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .info .date {
+        border-right: 1px solid #e9ecf0;
+      }
+
+      .info .p2 {
+        margin-bottom: 0;
+      }
+
+      .info span,
+      .info p {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .rate .p1 {
+        padding-top: 10px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 40px;
+        font-weight: normal;
+      }
+
+      .info .p1 {
+        height: 22px;
+        line-height: 22px;
+        font-size: 24px;
+      }
+
+      .info,
+      .progress-box,
+      .button {
+        margin-top: 10px;
+      }
+
+      .progress-box .p1 {
+        position: relative;
+        top: 12px;
+        z-index: 99;
+      }
+
+      .button a {
+        font-size: 18px;
+      }
+    }//media max lg end
+
+    @media screen and (max-width: 400px) {
+      .title {
+        font-size: 18px;
+      }
+
+      .info .p1 {
+        font-size: 14px;
+        font-weight: bolder;
+      }
+    }//media max 400px end
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }//item end
+
+  @media screen and (max-width: @screen-lg) {
+    .title-name-bar {
+      display: none;
+    }
+  }
+  @media screen and (min-width: @screen-lg) {
+    .product-list-2th,
+    .product-list-3th {
+      .item {
+        .p2 {
+          display: none;
+        }
+      }
+    }
+  }
+
+  //list-2th, 3th
+  .more {
+    display: block;
+    line-height: 60px;
+    height: 60px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .order .current {
+    color: @primary-color;
+  }
+}
+
+.footer {
+  margin-top: 25px;
+}
