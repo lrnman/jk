@@ -141,9 +141,11 @@
         }
     }
 
+    var allCount = 5;
+
     //all
     $('.header-nav').on('click', '.all', function(){
-        load('all', 5);
+        load('all', allCount);
         $('.header-nav a').removeClass('current');
         $(this).addClass('current');
     });
@@ -167,7 +169,7 @@
     $('.load_financialProduct').on('click', '.product-list-3th .more', handleZR);
 
     //init
-    load('all', 4);
+    load('all', allCount);
 
     //order
     function returnOrder(type, attr) {
